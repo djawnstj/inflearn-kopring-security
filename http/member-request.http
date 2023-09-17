@@ -1,0 +1,43 @@
+### 회원가입
+POST http://localhost:8080/api/member/signup
+Content-Type: application/json
+
+{
+  "loginId": "testAccount",
+  "password": "@testPw1231",
+  "name": "hong",
+  "birthDate": "1995-10-11",
+  "gender": "MAN",
+  "email": "test@domain.com"
+}
+
+### 회원가입 입력값 검증(실패 시)
+POST http://localhost:8080/api/member/signup
+Content-Type: application/json
+
+### 로그인
+POST http://localhost:8080/api/member/login
+Content-Type: application/json
+
+{
+  "loginId": "testAccount",
+  "password": "@testPw1231"
+}
+
+### 내 정보 보기
+GET http://localhost:8080/api/member/info
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QWNjb3VudCIsImF1dGgiOiJST0xFX01FTUJFUiIsInVzZXJJZCI6MSwiaWF0IjoxNjk0OTU4Njg5LCJleHAiOjE2OTQ5NjA0ODl9.QbyfJ6X6JbsMRjEBSUmViXxhanWIrD6TJJW7EHfFLYQ
+
+### 내 정보 변경
+PUT http://localhost:8080/api/member/info
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QWNjb3VudCIsImF1dGgiOiJST0xFX01FTUJFUiIsInVzZXJJZCI6MSwiaWF0IjoxNjk0OTU4Njg5LCJleHAiOjE2OTQ5NjA0ODl9.QbyfJ6X6JbsMRjEBSUmViXxhanWIrD6TJJW7EHfFLYQ
+Content-Type: application/json
+
+{
+  "loginId": "testAccount",
+  "password": "@testPw1231",
+  "name": "hong2",
+  "birthDate": "1995-10-11",
+  "gender": "MAN",
+  "email": "test2@domain.com"
+}
